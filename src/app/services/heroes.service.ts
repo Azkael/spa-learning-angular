@@ -70,25 +70,28 @@ export class HeroesService {
     let heroesArray: Hero[] = [];
     text = text.toLowerCase()
 
-    for( let hero of this.heroes){
+    for (let i = 0; i < this.heroes.length; i++) {
+      let hero = this.heroes[i];
       let name = hero.name.toLowerCase();
+
       if( name.indexOf(text) >= 0) {
+        hero.idx = i;
         heroesArray.push(hero)
       }
+      
     }
 
     return heroesArray;
   }
 
-
-
 }
 
 
 export interface Hero {
-  name: string;
-  bio: string;
-  img: string;
-  appearance: string;
-  publisher: string;
+  name: string,
+  bio: string,
+  img: string,
+  appearance: string,
+  publisher: string,
+  idx?: number
 }

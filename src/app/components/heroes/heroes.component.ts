@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService, Hero } from '../../services/heroes.service';
-
-import { Router } from '@angular/router';
-
-
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-heroes',
@@ -21,7 +18,6 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
     this.heroes = this._heroesService.getHeroes();
-    // console.log(this.heroes);
   }
 
   seeHero(idx: number){
